@@ -1,10 +1,10 @@
 package com.anthony.admin.catalog.application;
 
-import com.anthony.admin.catalog.domain.Category;
+import com.anthony.admin.catalog.domain.category.Category;
 
 public class UseCase {
 
     public Category execute(){
-        return new Category();
+//        return new Category();
     }
 }
