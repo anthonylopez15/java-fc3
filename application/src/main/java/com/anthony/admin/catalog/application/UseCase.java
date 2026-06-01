@@ -2,9 +2,7 @@ package com.anthony.admin.catalog.application;
 
 import com.anthony.admin.catalog.domain.category.Category;
 
-public class UseCase {
+public abstract class UseCase<IN, OUT> {
 
-    public Category execute(){
-        return Category.newCategory("", "", true);
-    }
+    public abstract OUT execute(IN aInput);
 }
