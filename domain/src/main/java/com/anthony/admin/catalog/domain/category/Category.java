@@ -1,9 +1,9 @@
 package com.anthony.admin.catalog.domain.category;
 
 import com.anthony.admin.catalog.domain.AggregateRoot;
+import com.anthony.admin.catalog.domain.validation.ValidationHandler;
 
 import java.time.Instant;
-import java.util.UUID;
 
 public class Category extends AggregateRoot<CategoryID> {
     private String name;
@@ -39,6 +39,11 @@ public class Category extends AggregateRoot<CategoryID> {
         final var now = Instant.now();
 
         return new Category(id, aName, aDescription, aActive, now, now, null);
+    }
+
+    @Override
+    public void validate(ValidationHandler handler) {
+        new CategoryValidator(this, handler).validate();
     }
 
     public CategoryID getId() {

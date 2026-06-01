@@ -41,6 +41,6 @@ public class CategoryID extends Identifier {
 
     @Override
     public int hashCode() {
-        return getValue().hashCode();
+        return Objects.hash(getValue());
     }
 }
